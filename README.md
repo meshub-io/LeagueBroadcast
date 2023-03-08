@@ -62,11 +62,31 @@ To get a local copy up and running follow these steps.
 
 ### Installation
 
-1. Download [latest release](https://github.com/floh22/LeagueBroadcastHub/releases/latest)
+在 locol 使用：
+1. 至 Release 頁面下載[最新的 open source 修正版](https://github.com/meshub-io/LeagueBroadcast/releases/latest)
 2. Unzip release to desired install folder
 3. Add http://localhost:9001/frontend?backend=localhost as a browser source in OBS in your ingame scene
 4. Add http://localhost:9001/?backend=ws://localhost:9001/api as a browser source in OBS in your PickBan scene
 
+若想用公開連結，可改用以下步驟：
+1. 至 Release 頁面下載[最新的 open source 修正版](https://github.com/meshub-io/LeagueBroadcast/releases/latest)
+2. 解壓縮後，執行裡面的 `LeagueBroadcast.exe`
+3. 從 ngrok 官網下載 [ngrok](https://ngrok.com/download)
+4. 將下載檔解壓縮後，會有一個 ngrok 執行檔 (先不用雙擊執行，之後會透過終端機來執行)
+5. 從 ngrok 官網註冊你的信箱，取得 auth token
+6. 開啟終端機 (進入解壓縮後的資料夾內)，執行以下指令設定 ngrok 的 auth token：
+```
+./ngrok config add-authtoken <YOUR_AUTH_TOKEN>
+```
+7. 執行 ngrok，並指定 port 9001，指令如下：
+```
+./ngrok http 9001
+```
+8. 執行 步驟 7 後，ngrok 會產生一個 HTTPS 的 URL (URL 類似這樣 `https://ab12-60-250-98-213.jp.ngrok.io`，後面步驟的 URL 範例會用 `some_url.ngrok.io` 代表 `ab12-60-250-98-213.jp.ngrok.io` 部分)
+9. ingame 的 URL：http://some_url.ngrok.io/frontend?backend=some_url.ngrok.io
+10. PickBan 的 URL：http://some_url.ngrok.io/?backend=ws://some_url.ngrok.io/api
+
+> 重新執行 步驟 7 的話，HTTPS 的 URL 會變，如果要固定 URL 的話，需要使用付費版的 ngrok
 
 <!-- USAGE EXAMPLES -->
 ## Usage
