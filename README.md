@@ -83,8 +83,8 @@ To get a local copy up and running follow these steps.
 ./ngrok http 9001
 ```
 8. 執行 步驟 7 後，ngrok 會產生一個 HTTPS 的 URL (URL 類似這樣 `https://ab12-60-250-98-213.jp.ngrok.io`，後面步驟的 URL 範例會用 `some_url.ngrok.io` 代表 `ab12-60-250-98-213.jp.ngrok.io` 部分)
-9. ingame 的 URL：http://some_url.ngrok.io/frontend?backend=some_url.ngrok.io
-10. PickBan 的 URL：http://some_url.ngrok.io/?backend=ws://some_url.ngrok.io/api
+9. ingame 的 URL：https://some_url.ngrok.io/frontend?backend=some_url.ngrok.io
+10. PickBan 的 URL：https://some_url.ngrok.io/?backend=ws://some_url.ngrok.io/api
 
 > 重新執行 步驟 7 的話，HTTPS 的 URL 會變，如果要固定 URL 的話，需要使用付費版的 ngrok
 
